@@ -1,0 +1,235 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    --nav-header-size: 30px;
+    --nav-header-padding: 19px;
+    --nav-li-size: 18px;
+    --nav-list-margin-left: 30px;
+    --nav-margin-right: calc(var(--nav-list-margin-left) + 20px);
+    --nav-color: #ffffff;
+    --nav-font-weight: 600;
+    --nav-li-seperator: 15px;
+
+    --nav-section-seperator: 40px;
+
+
+    --main-page-font-color: #000000;
+
+    --header-standard-gap: 15px;
+    --header-section-bg-color:#ffffff;
+    --header-left-right-margin: 20px;
+    --header-section-top-bottom-margin:20px; 
+
+    --search-section-width: 40%;
+    --search-bar-height: 2.25rem;
+    --search-bar-max-width: 400px;
+    --search-bar-min-width: 200px;
+    --search-bar-bg-color: #dae2e6;
+    --search-bar-font-size: 1.55rem;
+    
+
+    --upper-right-buttons-width: calc(100% - var(--search-section-width));
+    --profile-name-font-size: 2rem;
+    --profile-name-font-weight: 600;
+
+    --content-section-bg-color: var(--search-bar-bg-color);
+}
+
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template: 1fr 4fr / 1fr 4fr;
+}
+
+.navigation {
+    background-color: rgb(36, 123, 182);
+    grid-row: 1 / 3;
+
+    font-weight: var(--nav-font-weight);
+    
+}
+
+.nav-header {
+    display: grid;
+    grid-template-columns: 50px auto;
+    margin-bottom: var(--nav-section-seperator);
+    justify-items: start;
+    align-items: center;
+
+    padding:var(--nav-header-padding);
+    margin-right: var(--nav-margin-right);
+
+    color: var(--nav-color);
+    font-size: var(--nav-header-size);
+}
+
+.navigation ul {
+    margin-bottom: var(--nav-section-seperator);
+    margin-left: var(--nav-list-margin-left);
+    margin-right: var(--nav-list-margin-left);
+    list-style-type: none;
+}
+
+.navigation li {
+    display: grid;
+    grid-template-columns: 40px auto;
+    justify-items: start;
+    align-items: center;
+    margin-bottom:var(--nav-li-seperator);
+}
+
+.navigation img {
+    color: var(--nav-color);
+}
+
+.navigation a {
+    color: var(--nav-color);
+    font-size: var(--nav-li-size);
+    text-decoration: none;
+}
+
+
+
+
+
+.header {
+    background-color: var(--header-section-bg-color);
+    grid-column: 2 / 3;
+
+}
+
+.headerTop{
+    display: flex;
+    height: 50%;
+    justify-content: space-between;
+}
+
+.headerBottom{
+    display: flex;
+    height: 50%;
+}
+
+.search-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: var(--header-section-top-bottom-margin);
+
+    margin-left: var(--header-left-right-margin);
+    margin-right: var(--header-left-right-margin);
+    width: 60%;
+    min-width:calc(var(--search-bar-min-width) * 1.2);
+
+    overflow: hidden;
+    
+}
+
+.search-container label {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    flex: 0 0 auto;
+}
+
+.search-container img{
+    width:var(--search-bar-font-size);
+    height: var(--search-bar-font-size);
+}
+
+
+.search-container img {
+    display:inline;
+}
+
+.search-container input{
+    flex: 1 1 auto;
+    height:var(--search-bar-height);
+    max-width: var(--search-bar-max-width);
+    min-width: var(--search-bar-min-width);
+    
+    border-radius: 10px;
+    padding: 5px;
+
+    border:none;
+
+    background-color: var(--search-bar-bg-color);
+    font-size: var(--search-bar-font-size);
+}
+
+.upper-right-buttons{
+    display: flex;
+    width: var(--upper-right-buttons-width);
+    margin: var(--header-section-top-bottom-margin);
+    align-items: center;
+    gap: var(--header-standard-gap);
+    margin-right: var(--header-left-right-margin);
+}
+
+.upper-right-buttons button {
+    border:none;
+    background-color: var(--header-section-bg-color);
+    margin-left: auto;
+}
+
+.upper-right-buttons a {
+    color: var(--main-page-font-color);
+    font-size: var(--profile-name-font-size);
+    font-weight: var(--profile-name-font-weight);
+    text-decoration: none;
+}
+
+
+.content {
+    background-color: var(--content-section-bg-color);
+}
