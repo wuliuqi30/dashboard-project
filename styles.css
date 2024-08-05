@@ -350,7 +350,15 @@ body {
 
     border: none;
     border-radius: var(--border-radii);
+
+    transition: 0.2s;
 }
+
+
+.page-actions button:hover {
+    transform: scale(1.1);
+}
+
 
 
 
@@ -403,6 +411,12 @@ body {
     border-radius: var(--card-edge-radius);
     background-color: var(--card-bg-color);
     box-shadow: 5px 5px var(--card-shadow-color);
+
+    transition: 0.2s;
+}
+
+.projects .card:hover{
+    transform: translateY(-5px);
 }
 
 .projects .card {
